@@ -25,6 +25,7 @@ RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC64107
 	&& echo "daemon off;" >> /etc/nginx/nginx.conf \
 	&& rm /etc/nginx/conf.d/default.conf  \
 	&& echo "root:Docker!" | chpasswd
+
 COPY nginx.conf /etc/nginx/conf.d/
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf	
 COPY sshd_config /etc/ssh/
